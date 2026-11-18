@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    border-color: #080808;
+    border-radius: 0;
+  }
+  
+  html, body {
+    background-color: #EEEEEE;
+    color: #080808;
+    font-family: 'Space Mono', 'JetBrains Mono', monospace;
+    letter-spacing: -0.01em;
+  }
+
+  /* Sharp technical scrollbars */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #E5E5E5;
+    border-left: 1px solid #080808;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #080808;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2020FF;
+  }
+}
+
+@layer components {
+  /* Brutalist interactive button style */
+  .btn-raw {
+    @apply inline-flex items-center justify-center font-mono text-xs uppercase tracking-wider px-3.5 py-2 border border-black bg-white text-black transition-none hover:bg-black hover:text-white active:translate-x-0.5 active:translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-black;
+  }
+
+  .btn-raw-black {
+    @apply inline-flex items-center justify-center font-mono text-xs uppercase tracking-wider px-3.5 py-2 border border-black bg-black text-white transition-none hover:bg-[#2020FF] active:translate-x-0.5 active:translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-black;
+  }
+
+  .btn-raw-accent {
+    @apply inline-flex items-center justify-center font-mono text-xs uppercase tracking-wider px-3.5 py-2 border border-black bg-[#2020FF] text-white transition-none hover:bg-black hover:text-[#39FF14] active:translate-x-0.5 active:translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-black;
+  }
+}
+
+@layer utilities {
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-1 focus:ring-offset-[#EEEEEE];
+  }
+}
